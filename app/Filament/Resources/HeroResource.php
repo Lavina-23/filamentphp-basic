@@ -65,7 +65,7 @@ class HeroResource extends Resource
                     ->searchable(),
                 ToggleColumn::make('isActive')
                     ->sortable()
-                    ->beforeStateUpdated(function (Hero $hero, $state) {
+                    ->beforeStateUpdated(function (Hero $hero) {
                         Hero::where('id', '!=', $hero->id)->update(['isActive' => 0]);
                         // memilih id yang tidak sama dengan id yang dipilih lalu mengupdatenya menjadi 0 (tidak aktif)
                     }),
