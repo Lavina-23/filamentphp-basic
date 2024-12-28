@@ -10,6 +10,7 @@ class LandingPageController extends Controller
     public function index()
     {
         $hero = \App\Models\Hero::where('isActive', true)->first();
-        return view('welcome', compact('hero'));
+        $services = \App\Models\Service::all();
+        return view('welcome', compact('hero', 'services'));
     }
 }
