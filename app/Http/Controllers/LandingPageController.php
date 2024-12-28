@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Service;
 use Illuminate\Http\Request;
 
 class LandingPageController extends Controller
@@ -14,7 +15,7 @@ class LandingPageController extends Controller
         [$title, $animation] = explode('|', $hero->title);
         $animation = explode('#', $animation);
 
-        $services = \App\Models\Service::all();
+        $services = Service::orderBy('sort')->get();
         return view('welcome', compact('hero', 'title', 'animation', 'services'));
     }
 }
