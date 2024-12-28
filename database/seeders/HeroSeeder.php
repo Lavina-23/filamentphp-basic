@@ -13,6 +13,9 @@ class HeroSeeder extends Seeder
     public function run(): void
     {
         //
-        \App\Models\Hero::factory(10)->create();
+        \App\Models\Hero::factory(5)->create();
+        \App\Models\Hero::factory()->create([
+            'isActive' => true,
+        ]);
     }
 }
