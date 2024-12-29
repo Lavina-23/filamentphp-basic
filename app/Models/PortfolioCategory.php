@@ -13,4 +13,9 @@ class PortfolioCategory extends Model
         'name',
         'slug'
     ];
+
+    public function portfolio()
+    {
+        return $this->hasMany(Portfolio::class);
+    }
 }
