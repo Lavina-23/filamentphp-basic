@@ -32,7 +32,8 @@ class DatabaseSeeder extends Seeder
             ServiceSeeder::class,
             PortfolioCategorySeeder::class,
             PortfolioSeeder::class,
-            ClientSeeder::class
+            ClientSeeder::class,
+            TeamSeeder::class
         ]);
     }
 }

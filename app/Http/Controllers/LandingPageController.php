@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Client;
 use App\Models\Portfolio;
 use App\Models\Service;
+use App\Models\Team;
 use Illuminate\Http\Request;
 
 class LandingPageController extends Controller
@@ -23,6 +24,8 @@ class LandingPageController extends Controller
 
         $clients = Client::inRandomOrder()->get();
 
-        return view('welcome', compact('hero', 'title', 'animation', 'services', 'portfolios', 'clients'));
+        $teams = Team::all();
+
+        return view('welcome', compact('hero', 'title', 'animation', 'services', 'portfolios', 'clients', 'teams'));
     }
 }
